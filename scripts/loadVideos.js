@@ -40,12 +40,14 @@ const displayVideos = (videos) => {
                     </div>
                 </div>
 
-                <div cla>
+                <div>
                     <h1 class="text-[1rem] font-bold">${vid.title}</h1>
                     <p class="flex gap-1 text-[0.875rem] text-gray-400 font-semibold">${vid.authors[0].profile_name} <img class="w-5 h-5" src="https://img.icons8.com/?size=96&id=98A4yZTt9abw&format=png" alt="verified"></p>
                     <p class="text-[0.875rem] text-gray-400 font-semibold">${vid.others.views} views</p>
                 </div>
             </div>
+
+            <button onclick=loadVideoDetails('${vid.video_id}') class="btn btn-block">Show Details</button>
         </div>
         `
         videoContainer.appendChild(videoCard);
