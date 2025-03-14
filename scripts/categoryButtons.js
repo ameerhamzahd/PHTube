@@ -10,7 +10,7 @@ function displayCategoryButtons(categories) {
     for(let cat of categories) {
         const categoryButton = document.createElement('div');
         categoryButton.innerHTML = `
-        <button class="btn btn-sm hover:btn-error hover:text-white">${cat.category}</button>
+        <button onclick="loadCategoryVideos(${cat.category_id})" class="btn btn-sm hover:btn-error hover:text-white">${cat.category}</button>
         `
         categoryButtonsContainer.appendChild(categoryButton);
     }
