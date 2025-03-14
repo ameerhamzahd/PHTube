@@ -46,23 +46,23 @@
 
 <body class="px-5 lg:px-10">
     <header>
-        <div class="navbar bg-base-100 shadow-sm">
+        <div class="shadow-sm navbar bg-base-100">
             <div class="navbar-start">
                 <div class="dropdown">
                     <div tabindex="0" role="button" class="btn btn-ghost md:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h8m-8 6h16" />
                         </svg>
                     </div>
                     <ul tabindex="0"
-                        class="gap-4 menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-auto p-3 shadow">
+                        class="z-10 w-auto gap-4 p-3 mt-3 shadow menu menu-sm dropdown-content bg-base-100 rounded-box">
                         <li><a class="btn btn-soft">Sort by view</a></li>
-                        <li><a class="btn btn-error text-white">Blog</a></li>
+                        <li><a class="text-white btn btn-error">Blog</a></li>
 
                         <li>
-                            <div class="join flex items-center">
+                            <div class="flex items-center join">
                                 <div>
                                     <label class="input validator join-item">
                                         <input type="text" placeholder="Search" required />
@@ -73,17 +73,17 @@
                         <li><a class="btn btn-neutral">Seach</a></li>
                     </ul>
                 </div>
-                <a class="btn btn-ghost text-xl">
+                <a class="text-xl btn btn-ghost">
                     <img src="./resources/Logo.png" alt="logo">
                 </a>
             </div>
-            <div class="navbar-center hidden lg:flex">
-                <ul class="menu menu-horizontal px-1">
+            <div class="hidden navbar-center lg:flex">
+                <ul class="px-1 menu menu-horizontal">
                     <li><a class="btn btn-soft">Sort by view</a></li>
                 </ul>
             </div>
-            <div class="navbar-end hidden md:flex gap-5">
-                <div class="join flex items-center">
+            <div class="hidden gap-5 navbar-end md:flex">
+                <div class="flex items-center join">
                     <div>
                         <label class="input validator join-item">
                             <input type="text" placeholder="Search" required />
@@ -92,16 +92,22 @@
                     <button class="btn btn-neutral join-item">Search</button>
                 </div>
 
-                <a class="btn btn-error text-white">Blog</a>
+                <a class="text-white btn btn-error">Blog</a>
             </div>
         </div>
     </header>
 
     <main>
         <section class="py-[1.5rem]">
-            <div id="category-buttons-container" class="flex md:flex-row items-center justify-center gap-3 md:gap-5">
-                <button class="btn btn-sm btn-error text-white">All</button>
+            <div id="category-buttons-container" class="flex items-center justify-center gap-3 md:flex-row md:gap-5">
+                <button class="text-white btn btn-sm btn-error">All</button>
 
+            </div>
+        </section>
+
+        <section>
+            <div id="video-container" class="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+                
             </div>
         </section>
     </main>
@@ -111,6 +117,7 @@
     </footer>
 
     <script src="./scripts/categoryButtons.js"></script>
+    <script src="./scripts/loadVideos.js"></script>
 </body>
 
 </html>
