@@ -15,12 +15,16 @@ const displayVideos = (videos) => {
     videoContainer.innerHTML = '';
 
     if(videos.length === 0) {
+        showLoader();
+
         videoContainer.innerHTML = `
         <div class="py-[7.5rem] col-span-full flex flex-col items-center justify-center text-center gap-5">
             <img class="w-auto" src="./resources/Icon.png" alt="Icon">
             <h2 class="text-2xl font-bold">Oops!! Sorry, There is <br> no content here</h2>
         </div>
         `
+
+        hideLoader();
 
         return;
     }
@@ -52,5 +56,7 @@ const displayVideos = (videos) => {
         `
         videoContainer.appendChild(videoCard);
     });
+
+    hideLoader();
 }
 
