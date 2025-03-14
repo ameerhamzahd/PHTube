@@ -41,6 +41,11 @@
         .font-poppins {
             font-family: "Poppins", serif;
         }
+
+        .active {
+            background-color: oklch(0.7126 0.221 22.18);
+            color: white;
+        }
     </style>
 </head>
 
@@ -100,7 +105,7 @@
     <main>
         <section class="py-[1.5rem]">
             <div id="category-buttons-container" class="flex items-center justify-center gap-3 md:flex-row md:gap-5">
-                <button onclick="loadVideos()" class="text-white btn btn-sm btn-error">All</button>
+                <button id="btn-all" onclick="loadVideos()" class="btn btn-sm">All</button>
 
             </div>
         </section>

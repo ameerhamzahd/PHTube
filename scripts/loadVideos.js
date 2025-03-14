@@ -1,14 +1,30 @@
 function loadVideos() {
     fetch('https://openapi.programming-hero.com/api/phero-tube/videos')
         .then(response => response.json())
-        .then(data => displayVideos(data.videos));
+        .then(data => {
+            removeActiveClass();
+
+            document.getElementById('btn-all').classList.add('active');
+            displayVideos(data.videos);
+        });
 }
 
 const displayVideos = (videos) => {
     const videoContainer = document.getElementById('video-container');
 
     videoContainer.innerHTML = '';
-    
+
+    if(videos.length === 0) {
+        videoContainer.innerHTML = `
+        <div class="py-[7.5rem] col-span-full flex flex-col items-center justify-center text-center gap-5">
+            <img class="w-auto" src="./resources/Icon.png" alt="Icon">
+            <h2 class="text-2xl font-bold">Oops!! Sorry, There is no <br> content here</h2>
+        </div>
+        `
+
+        return;
+    }
+
     videos.forEach((vid) => {
         const videoCard = document.createElement('div');
         videoCard.innerHTML = `
