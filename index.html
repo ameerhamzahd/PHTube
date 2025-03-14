@@ -49,7 +49,7 @@
     </style>
 </head>
 
-<body class="px-5 lg:px-10">
+<body class="px-5 lg:px-10 font-poppins">
     <header>
         <div class="shadow-sm navbar bg-base-100">
             <div class="navbar-start">
@@ -63,19 +63,20 @@
                     </div>
                     <ul tabindex="0"
                         class="z-10 w-auto gap-4 p-3 mt-3 shadow menu menu-sm dropdown-content bg-base-100 rounded-box">
-                        <li><a class="btn btn-soft">Sort by view</a></li>
-                        <li><a class="text-white btn btn-error">Blog</a></li>
+                        <li><a class="text-white btn btn-error">Sort by view</a></li>
 
                         <li>
-                            <div class="flex items-center join">
-                                <div>
-                                    <label class="input validator join-item">
-                                        <input type="text" placeholder="Search" required />
-                                    </label>
-                                </div>
-                            </div>
+                            <label class="input flex items-center gap-3">
+                                <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none"
+                                        stroke="currentColor">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <path d="m21 21-4.3-4.3"></path>
+                                    </g>
+                                </svg>
+                                <input type="search" required placeholder="Search" />
+                            </label>
                         </li>
-                        <li><a class="btn btn-neutral">Seach</a></li>
                     </ul>
                 </div>
                 <a class="text-xl btn btn-ghost">
@@ -84,20 +85,20 @@
             </div>
             <div class="hidden navbar-center lg:flex">
                 <ul class="px-1 menu menu-horizontal">
-                    <li><a class="btn btn-soft">Sort by view</a></li>
+                    <label class="input flex items-center gap-3">
+                        <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none"
+                                stroke="currentColor">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.3-4.3"></path>
+                            </g>
+                        </svg>
+                        <input id="search-input" type="search" required placeholder="Search" />
+                    </label>
                 </ul>
             </div>
             <div class="hidden gap-5 navbar-end md:flex">
-                <div class="flex items-center join">
-                    <div>
-                        <label class="input validator join-item">
-                            <input type="text" placeholder="Search" required />
-                        </label>
-                    </div>
-                    <button class="btn btn-neutral join-item">Search</button>
-                </div>
-
-                <a class="text-white btn btn-error">Blog</a>
+                <a class="text-white btn btn-error">Sort by view</a>
             </div>
         </div>
     </header>
@@ -116,21 +117,22 @@
             </div>
         </section>
 
-        <!-- Open the modal using ID.showModal() method -->
-        <button class="btn" onclick="my_modal_1.showModal()">open modal</button>
-        <dialog id="video_details" class="modal">
-            <div class="modal-box">
-                <div id="details-container">
+        <section>
+            <!-- Open the modal using ID.showModal() method -->
+            <dialog id="video_details" class="modal">
+                <div class="modal-box">
+                    <div id="details-container">
 
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <!-- if there is a button in form, it will close the modal -->
+                            <button class="btn">Close</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="modal-action">
-                    <form method="dialog">
-                        <!-- if there is a button in form, it will close the modal -->
-                        <button class="btn">Close</button>
-                    </form>
-                </div>
-            </div>
-        </dialog>
+            </dialog>
+        </section>
     </main>
 
     <footer>
@@ -141,6 +143,7 @@
     <script src="./scripts/loadVideos.js"></script>
     <script src="./scripts/loadVideoDetails.js"></script>
     <script src="./scripts/loadCategoryVideos.js"></script>
+    <script src="./scripts/searchVideo.js"></script>
 </body>
 
 </html>

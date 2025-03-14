@@ -1,5 +1,5 @@
-function loadVideos() {
-    fetch('https://openapi.programming-hero.com/api/phero-tube/videos')
+function loadVideos(searchValue = '') {
+    fetch(`https://openapi.programming-hero.com/api/phero-tube/videos?title=${searchValue}`)
         .then(response => response.json())
         .then(data => {
             removeActiveClass();
@@ -18,7 +18,7 @@ const displayVideos = (videos) => {
         videoContainer.innerHTML = `
         <div class="py-[7.5rem] col-span-full flex flex-col items-center justify-center text-center gap-5">
             <img class="w-auto" src="./resources/Icon.png" alt="Icon">
-            <h2 class="text-2xl font-bold">Oops!! Sorry, There is no <br> content here</h2>
+            <h2 class="text-2xl font-bold">Oops!! Sorry, There is <br> no content here</h2>
         </div>
         `
 
@@ -42,7 +42,7 @@ const displayVideos = (videos) => {
 
                 <div>
                     <h1 class="text-[1rem] font-bold">${vid.title}</h1>
-                    <p class="flex gap-1 text-[0.875rem] text-gray-400 font-semibold">${vid.authors[0].profile_name} <img class="w-5 h-5" src="https://img.icons8.com/?size=96&id=98A4yZTt9abw&format=png" alt="verified"></p>
+                    <p class="flex gap-1 text-[0.875rem] text-gray-400 font-semibold">${vid.authors[0].profile_name} ${vid.authors[0].verified == true ? `<img class="w-5 h-5" src="https://img.icons8.com/?size=96&id=98A4yZTt9abw&format=png" alt="verified">` : ``}</p>
                     <p class="text-[0.875rem] text-gray-400 font-semibold">${vid.others.views} views</p>
                 </div>
             </div>
